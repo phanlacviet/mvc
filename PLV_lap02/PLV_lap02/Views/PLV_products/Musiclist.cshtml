@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Musiclist";
+}
+
+<h2>Danh sách nhạc</h2>
+<table>
+    <tr>
+        <th>Tên nhạc</th>
+        <th>Tải về</th>
+    </tr>
+    <tr>
+        <td><a href="@Url.Action("PlayMusic", "PLV_products", new { songName = "demo" })">Nhạc demo</a></td>
+        <td><a href="@Url.Action("DownloadMusic", "PLV_products", new { id = "demo" })">Tải về</a></td>
+    </tr>
+    <tr>
+        <td><a href="@Url.Action("PlayMusic", "PLV_products", new { songName = "demo2" })">Nhạc demo2</a></td>
+        <td><a href="@Url.Action("DownloadMusic", "PLV_products", new { id = "demo2" })">Tải về</a></td>
+    </tr>
+    <tr>
+        <td><a href="@Url.Action("PlayMusic", "PLV_products", new { songName = "demo3" })">Nhạc demo3</a></td>
+        <td><a href="@Url.Action("DownloadMusic", "PLV_products", new { id = "demo3" })">Tải về</a></td>
+    </tr>
+</table>
+<audio controls>
+    <source src="@ViewBag.SongUrl" type="audio/mpeg">
+</audio>
+
