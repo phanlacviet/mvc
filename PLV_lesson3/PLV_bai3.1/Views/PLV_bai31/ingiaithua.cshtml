@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "ingiaithua";
+}
+
+<h2>In giai thừa từ 1 đến 10</h2>
+@{
+    int n = 10;
+    int[] factorials = new int[n + 1];
+
+    factorials[0] = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        factorials[i] = factorials[i - 1] * i;
+    }
+
+    for (int i = 1; i <= n; i++)
+    {
+        @($"{i}! = {factorials[i]}") <br />
+    }
+}
+
