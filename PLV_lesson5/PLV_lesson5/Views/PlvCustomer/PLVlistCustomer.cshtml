@@ -1,0 +1,41 @@
+﻿@*//@model List<PLV_lesson5.Models.PlvCustomer>;*@
+    @{
+        ViewBag.Title = "Danh sách khách hàng";
+        //var list = Model as List<PLV_lesson5.Models.PlvCustomer>;
+        var list = ViewBag.list;
+        int stt = 0;
+    }
+
+    <h2>Danh sách khách hàng</h2>
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Mã số</th>
+                    <th>Họ và tên</th>
+                    <th>Địa chỉ</th>
+                    <th>Năm sinh</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in list)
+                {
+                    stt++;
+                    <tr>
+                        <td>@stt</td>
+                        <td>@item.customerid</td>
+                        <td>@item.firstname @item.lastname</td>
+                        <td>@item.address</td>
+                        <td>@item.yearofbirth</td>
+                        <td>
+                            <a href="#">Edit</a>
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
