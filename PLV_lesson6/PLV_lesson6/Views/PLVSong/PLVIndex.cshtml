@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PLV_lesson6.Models.PlvSong>
+
+@{
+    ViewBag.Title = "PLV: Danh sách bài hát";
+}
+
+<h2>PLV: Danh sách bài hát</h2>
+
+<p>
+    @Html.ActionLink("Create New", "PLVCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PLVTittle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLVAuthor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLVArtist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLVYearRelease)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLVTittle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLVAuthor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLVArtist)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLVYearRelease)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
