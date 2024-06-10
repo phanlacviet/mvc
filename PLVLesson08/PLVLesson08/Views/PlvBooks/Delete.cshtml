@@ -1,0 +1,72 @@
+﻿@model PLVLesson08.Models.PlvBook
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PlvBook</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plvyear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plvyear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvPublisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvPublisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvPicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvCategoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvCategoryId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

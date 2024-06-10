@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PLVBaiThiGiuaKi.Models.PLVCustomert>
+
+@{
+    ViewBag.Title = "PLVIndex";
+}
+
+<h2>PLVIndex</h2>
+
+<p>
+    @Html.ActionLink("PLVCreate", "PLVCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PLVFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLVEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLVPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLVAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PLVGender)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLVFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLVEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLVPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLVAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PLVGender)
+        </td>
+        <td>
+            @Html.ActionLink("PLVEdit", "PLVEdit", new { id=item.PLVID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PLVID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PLVID })
+        </td>
+    </tr>
+}
+
+</table>

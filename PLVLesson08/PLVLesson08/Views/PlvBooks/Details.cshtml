@@ -1,0 +1,66 @@
+﻿@model PLVLesson08.Models.PlvBook
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PlvBook</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvAuthor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvAuthor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plvyear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plvyear)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvPublisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvPublisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvPicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvPicture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvCategoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvCategoryId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PlvBookId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

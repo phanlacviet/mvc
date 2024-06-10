@@ -1,0 +1,33 @@
+﻿@model IEnumerable<PLVLesson08.Models.PlvCategory>
+
+@{
+    ViewBag.Title = "PlvIndex";
+}
+
+<h2>PlvIndex</h2>
+
+<p>
+    @Html.ActionLink("Plv:Create New", "PlvCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvCategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvCategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PlvCategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PlvCategoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PlvCategoryId })
+        </td>
+    </tr>
+}
+
+</table>
