@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PlvK22CNT2Lesson07DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="plvKhoa">
+          <Key>
+            <PropertyRef Name="PlvMaKh" />
+          </Key>
+          <Property Name="PlvMaKh" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="PlvTenKh" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlvTrangThai" Type="bit" />
+        </EntityType>
+        <EntityType Name="PlvSinhVien">
+          <Key>
+            <PropertyRef Name="PlvMaSv" />
+          </Key>
+          <Property Name="PlvMaSv" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PlvHoSv" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlvTenSv" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlvNgaySinh" Type="date" />
+          <Property Name="PlvPhai" Type="bit" />
+          <Property Name="PlvPhone" Type="nchar" MaxLength="10" />
+          <Property Name="PlvEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlvMaKh" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_PlvSinhVien_plvKhoa">
+          <End Role="plvKhoa" Type="Self.plvKhoa" Multiplicity="0..1" />
+          <End Role="PlvSinhVien" Type="Self.PlvSinhVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="plvKhoa">
+              <PropertyRef Name="PlvMaKh" />
+            </Principal>
+            <Dependent Role="PlvSinhVien">
+              <PropertyRef Name="PlvMaKh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PlvK22CNT2Lesson07DbModelStoreContainer">
+          <EntitySet Name="plvKhoa" EntityType="Self.plvKhoa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlvSinhVien" EntityType="Self.PlvSinhVien" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PlvSinhVien_plvKhoa" Association="Self.FK_PlvSinhVien_plvKhoa">
+            <End Role="plvKhoa" EntitySet="plvKhoa" />
+            <End Role="PlvSinhVien" EntitySet="PlvSinhVien" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PlvK22CNT2Lesson07DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="plvKhoa">
+          <Key>
+            <PropertyRef Name="PlvMaKh" />
+          </Key>
+          <Property Name="PlvMaKh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PlvTenKh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlvTrangThai" Type="Boolean" />
+          <NavigationProperty Name="PlvSinhViens" Relationship="PlvK22CNT2Lesson07DbModel.FK_PlvSinhVien_plvKhoa" FromRole="plvKhoa" ToRole="PlvSinhVien" />
+        </EntityType>
+        <EntityType Name="PlvSinhVien">
+          <Key>
+            <PropertyRef Name="PlvMaSv" />
+          </Key>
+          <Property Name="PlvMaSv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PlvHoSv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlvTenSv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlvNgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="PlvPhai" Type="Boolean" />
+          <Property Name="PlvPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PlvEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlvMaKh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="plvKhoa" Relationship="PlvK22CNT2Lesson07DbModel.FK_PlvSinhVien_plvKhoa" FromRole="PlvSinhVien" ToRole="plvKhoa" />
+        </EntityType>
+        <EntityContainer Name="PlvK22CNT2Lesson07DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="plvKhoas" EntityType="Self.plvKhoa" />
+          <EntitySet Name="PlvSinhViens" EntityType="Self.PlvSinhVien" />
+          <AssociationSet Name="FK_PlvSinhVien_plvKhoa" Association="PlvK22CNT2Lesson07DbModel.FK_PlvSinhVien_plvKhoa">
+            <End Role="plvKhoa" EntitySet="plvKhoas" />
+            <End Role="PlvSinhVien" EntitySet="PlvSinhViens" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_PlvSinhVien_plvKhoa">
+          <End Type="PlvK22CNT2Lesson07DbModel.plvKhoa" Role="plvKhoa" Multiplicity="0..1" />
+          <End Type="PlvK22CNT2Lesson07DbModel.PlvSinhVien" Role="PlvSinhVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="plvKhoa">
+              <PropertyRef Name="PlvMaKh" />
+            </Principal>
+            <Dependent Role="PlvSinhVien">
+              <PropertyRef Name="PlvMaKh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PlvK22CNT2Lesson07DbModelStoreContainer" CdmEntityContainer="PlvK22CNT2Lesson07DbEntities">
+          <EntitySetMapping Name="plvKhoas">
+            <EntityTypeMapping TypeName="PlvK22CNT2Lesson07DbModel.plvKhoa">
+              <MappingFragment StoreEntitySet="plvKhoa">
+                <ScalarProperty Name="PlvMaKh" ColumnName="PlvMaKh" />
+                <ScalarProperty Name="PlvTenKh" ColumnName="PlvTenKh" />
+                <ScalarProperty Name="PlvTrangThai" ColumnName="PlvTrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlvSinhViens">
+            <EntityTypeMapping TypeName="PlvK22CNT2Lesson07DbModel.PlvSinhVien">
+              <MappingFragment StoreEntitySet="PlvSinhVien">
+                <ScalarProperty Name="PlvMaSv" ColumnName="PlvMaSv" />
+                <ScalarProperty Name="PlvHoSv" ColumnName="PlvHoSv" />
+                <ScalarProperty Name="PlvTenSv" ColumnName="PlvTenSv" />
+                <ScalarProperty Name="PlvNgaySinh" ColumnName="PlvNgaySinh" />
+                <ScalarProperty Name="PlvPhai" ColumnName="PlvPhai" />
+                <ScalarProperty Name="PlvPhone" ColumnName="PlvPhone" />
+                <ScalarProperty Name="PlvEmail" ColumnName="PlvEmail" />
+                <ScalarProperty Name="PlvMaKh" ColumnName="PlvMaKh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

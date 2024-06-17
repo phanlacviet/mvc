@@ -1,0 +1,80 @@
+﻿@model PLVBaiKiemTraGK.Models.PlvSinhVien
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PlvSinhVien</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvHoSv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvHoSv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvTenSv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvTenSv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvNgaySinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvNgaySinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvPhai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvPhai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.plvKhoa.PlvTenKh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plvKhoa.PlvTenKh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "PLVIndex")
+        </div>
+    }
+</div>

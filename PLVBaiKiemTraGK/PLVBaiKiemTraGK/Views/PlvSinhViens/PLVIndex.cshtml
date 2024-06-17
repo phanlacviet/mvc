@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PLVBaiKiemTraGK.Models.PlvSinhVien>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "PLVCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvHoSv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvTenSv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvNgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvPhai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.plvKhoa.PlvTenKh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvHoSv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvTenSv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvNgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvPhai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.plvKhoa.PlvTenKh)
+        </td>
+        <td>
+            @Html.ActionLink("PLV:Edit", "PLVEdit", new { id=item.PlvMaSv.Trim() }) |
+            @Html.ActionLink("PLV:Details", "PLVDetails", new { id=item.PlvMaSv.Trim() }) |
+            @Html.ActionLink("PLV:Delete", "PLVDelete", new { id=item.PlvMaSv.Trim() })
+        </td>
+    </tr>
+}
+
+</table>

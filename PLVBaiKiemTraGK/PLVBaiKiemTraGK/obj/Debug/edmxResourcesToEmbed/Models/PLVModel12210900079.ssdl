@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlvK22CNT2Lesson07DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="plvKhoa">
+    <Key>
+      <PropertyRef Name="PlvMaKh" />
+    </Key>
+    <Property Name="PlvMaKh" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="PlvTenKh" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlvTrangThai" Type="bit" />
+  </EntityType>
+  <EntityType Name="PlvSinhVien">
+    <Key>
+      <PropertyRef Name="PlvMaSv" />
+    </Key>
+    <Property Name="PlvMaSv" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PlvHoSv" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlvTenSv" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlvNgaySinh" Type="date" />
+    <Property Name="PlvPhai" Type="bit" />
+    <Property Name="PlvPhone" Type="nchar" MaxLength="10" />
+    <Property Name="PlvEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlvMaKh" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_PlvSinhVien_plvKhoa">
+    <End Role="plvKhoa" Type="Self.plvKhoa" Multiplicity="0..1" />
+    <End Role="PlvSinhVien" Type="Self.PlvSinhVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plvKhoa">
+        <PropertyRef Name="PlvMaKh" />
+      </Principal>
+      <Dependent Role="PlvSinhVien">
+        <PropertyRef Name="PlvMaKh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PlvK22CNT2Lesson07DbModelStoreContainer">
+    <EntitySet Name="plvKhoa" EntityType="Self.plvKhoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlvSinhVien" EntityType="Self.PlvSinhVien" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PlvSinhVien_plvKhoa" Association="Self.FK_PlvSinhVien_plvKhoa">
+      <End Role="plvKhoa" EntitySet="plvKhoa" />
+      <End Role="PlvSinhVien" EntitySet="PlvSinhVien" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PLVBaiKiemTraGK.Models.plvKhoa>
+
+@{
+    ViewBag.Title = "PLVIndex";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("PLV:Create New", "PLVCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvTenKh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvTrangThai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvTenKh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvTrangThai)
+        </td>
+        <td>
+            @Html.ActionLink("PLV:Edit", "PLVEdit", new { id=item.PlvMaKh.Trim() }) |
+            @Html.ActionLink("PLV:Details", "PLVDetails", new { id=item.PlvMaKh.Trim() }) |
+            @Html.ActionLink("PLV:Delete", "PLVDelete", new { id=item.PlvMaKh.Trim() })
+        </td>
+    </tr>
+}
+
+</table>
