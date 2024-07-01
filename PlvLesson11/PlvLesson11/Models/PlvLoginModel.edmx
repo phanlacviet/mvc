@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PlvLesson11DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PlvTaiKhoan">
+          <Key>
+            <PropertyRef Name="Plvid" />
+          </Key>
+          <Property Name="Plvid" Type="int" Nullable="false" />
+          <Property Name="PlvUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlvPassWord" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlvFullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlvAge" Type="int" />
+          <Property Name="PlvEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlvPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlvStatus" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="PlvLesson11DbModelStoreContainer">
+          <EntitySet Name="PlvTaiKhoan" EntityType="Self.PlvTaiKhoan" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PlvLesson11DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PlvTaiKhoan">
+          <Key>
+            <PropertyRef Name="Plvid" />
+          </Key>
+          <Property Name="Plvid" Type="Int32" Nullable="false" />
+          <Property Name="PlvUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlvPassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlvFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlvAge" Type="Int32" />
+          <Property Name="PlvEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlvPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlvStatus" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="PlvLesson11DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PlvTaiKhoans" EntityType="Self.PlvTaiKhoan" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PlvLesson11DbModelStoreContainer" CdmEntityContainer="PlvLesson11DbEntities">
+          <EntitySetMapping Name="PlvTaiKhoans">
+            <EntityTypeMapping TypeName="PlvLesson11DbModel.PlvTaiKhoan">
+              <MappingFragment StoreEntitySet="PlvTaiKhoan">
+                <ScalarProperty Name="Plvid" ColumnName="Plvid" />
+                <ScalarProperty Name="PlvUserName" ColumnName="PlvUserName" />
+                <ScalarProperty Name="PlvPassWord" ColumnName="PlvPassWord" />
+                <ScalarProperty Name="PlvFullName" ColumnName="PlvFullName" />
+                <ScalarProperty Name="PlvAge" ColumnName="PlvAge" />
+                <ScalarProperty Name="PlvEmail" ColumnName="PlvEmail" />
+                <ScalarProperty Name="PlvPhone" ColumnName="PlvPhone" />
+                <ScalarProperty Name="PlvStatus" ColumnName="PlvStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

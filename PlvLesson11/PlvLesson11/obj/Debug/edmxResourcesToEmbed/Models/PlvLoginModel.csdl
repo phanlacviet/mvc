@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlvLesson11DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PlvTaiKhoan">
+    <Key>
+      <PropertyRef Name="Plvid" />
+    </Key>
+    <Property Name="Plvid" Type="Int32" Nullable="false" />
+    <Property Name="PlvUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlvPassWord" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlvFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlvAge" Type="Int32" />
+    <Property Name="PlvEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlvPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlvStatus" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="PlvLesson11DbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PlvTaiKhoans" EntityType="Self.PlvTaiKhoan" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,80 @@
+﻿@model PlvLesson11.Models.PlvTaiKhoan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PlvTaiKhoan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvPassWord)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvPassWord)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlvStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlvStatus)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

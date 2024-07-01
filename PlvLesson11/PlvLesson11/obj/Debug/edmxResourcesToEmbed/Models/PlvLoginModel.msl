@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PlvLesson11DbModelStoreContainer" CdmEntityContainer="PlvLesson11DbEntities">
+    <EntitySetMapping Name="PlvTaiKhoans">
+      <EntityTypeMapping TypeName="PlvLesson11DbModel.PlvTaiKhoan">
+        <MappingFragment StoreEntitySet="PlvTaiKhoan">
+          <ScalarProperty Name="Plvid" ColumnName="Plvid" />
+          <ScalarProperty Name="PlvUserName" ColumnName="PlvUserName" />
+          <ScalarProperty Name="PlvPassWord" ColumnName="PlvPassWord" />
+          <ScalarProperty Name="PlvFullName" ColumnName="PlvFullName" />
+          <ScalarProperty Name="PlvAge" ColumnName="PlvAge" />
+          <ScalarProperty Name="PlvEmail" ColumnName="PlvEmail" />
+          <ScalarProperty Name="PlvPhone" ColumnName="PlvPhone" />
+          <ScalarProperty Name="PlvStatus" ColumnName="PlvStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

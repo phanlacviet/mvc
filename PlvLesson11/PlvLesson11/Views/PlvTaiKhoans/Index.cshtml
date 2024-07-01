@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PlvLesson11.Models.PlvTaiKhoan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvPassWord)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlvStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvPassWord)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvFullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlvStatus)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Plvid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Plvid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Plvid })
+        </td>
+    </tr>
+}
+
+</table>

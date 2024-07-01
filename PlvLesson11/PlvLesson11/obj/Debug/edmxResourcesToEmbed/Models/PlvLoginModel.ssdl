@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlvLesson11DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PlvTaiKhoan">
+    <Key>
+      <PropertyRef Name="Plvid" />
+    </Key>
+    <Property Name="Plvid" Type="int" Nullable="false" />
+    <Property Name="PlvUserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlvPassWord" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlvFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlvAge" Type="int" />
+    <Property Name="PlvEmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlvPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlvStatus" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="PlvLesson11DbModelStoreContainer">
+    <EntitySet Name="PlvTaiKhoan" EntityType="Self.PlvTaiKhoan" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
